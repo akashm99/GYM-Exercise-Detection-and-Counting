@@ -86,7 +86,13 @@ threshold = 0.7
 curls = 0
 press = 0
 
-cap = cv2.VideoCapture("1.mp4")
+cap = cv2.VideoCapture("2.mp4")
+frame_width = int(cap.get(3))
+frame_height = int(cap.get(4))
+size = (frame_width, frame_height)
+result = cv2.VideoWriter('test_2.mp4', 
+                         cv2.VideoWriter_fourcc(*'MP4V'),
+                         20, size)
 with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:
     while cap.isOpened():
         ret, frame = cap.read()
@@ -139,11 +145,13 @@ with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=
         cv2.putText(image, f"REPS: curls: {curls} | press: {press}", (3, 30),
                     cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
+        result.write(image)
         cv2.imshow('OpenCV Feed', image)
 
         if cv2.waitKey(10) & 0xFF == ord('q'):
             break
     cap.release()
+    result.release()
     cv2.destroyAllWindows()
 
 

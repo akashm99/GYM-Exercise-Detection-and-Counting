@@ -1,9 +1,11 @@
 # GYM-Exercise-Detection-and-Counting
 
 ## Demo:
-<video src="Op/test_2.mp4">
+<video controls loop>
+  <source src="https://github.com/akashm99/GYM-Exercise-Detection-and-Counting/blob/main/Op/test2.mp4" type="video/mp4">
 </video>
-![op](Op/test_2.mp4)
+
+![op](https://github.com/akashm99/GYM-Exercise-Detection-and-Counting/blob/main/Op/test2.mp4)
 
 ## How to Run.
 ### 1. Create an virtual env(Python 3.8)

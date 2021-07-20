@@ -5,7 +5,9 @@
   <source src="https://github.com/akashm99/GYM-Exercise-Detection-and-Counting/blob/main/Op/test2.mp4" type="video/mp4">
 </video>
 
-![op](https://github.com/akashm99/GYM-Exercise-Detection-and-Counting/blob/main/Op/test2.mp4)
+### Video:   ![op](https://github.com/akashm99/GYM-Exercise-Detection-and-Counting/blob/main/Op/test2.mp4)
+<br>
+<img src="Op/action_detection.PNG">
 
 ## How to Run.
 ### 1. Create an virtual env(Python 3.8)

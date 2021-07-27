@@ -67,8 +67,8 @@ def calculate_angle(a, b, c):
 def prob_viz(res, actions, input_frame, colors):
     output_frame = input_frame.copy()
     for num, prob in enumerate(res):
-        cv2.rectangle(output_frame, (0, 60 + num * 40), (int(prob * 100), 90 + num * 40), colors[num], -1)
-        cv2.putText(output_frame, actions[num], (0, 85 + num * 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2,
+        cv2.rectangle(output_frame, (0, 85 + num * 40), (int(prob * 100), 115 + num * 40), colors[num], -1)
+        cv2.putText(output_frame, actions[num], (0, 110 + num * 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2,
                     cv2.LINE_AA)
 
     return output_frame
@@ -86,11 +86,11 @@ threshold = 0.7
 curls = 0
 press = 0
 
-cap = cv2.VideoCapture("2.mp4")
+cap = cv2.VideoCapture("test/t7.mov")
 frame_width = int(cap.get(3))
 frame_height = int(cap.get(4))
 size = (frame_width, frame_height)
-result = cv2.VideoWriter('test_2.mp4', 
+result = cv2.VideoWriter('test/t7op.mp4', 
                          cv2.VideoWriter_fourcc(*'MP4V'),
                          20, size)
 with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:
@@ -141,8 +141,10 @@ with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=
 
             image = prob_viz(res, actions, image, colors)
 
-        cv2.rectangle(image, (0, 0), (640, 40), (255, 0, 0), -1)
-        cv2.putText(image, f"REPS: curls: {curls} | press: {press}", (3, 30),
+        cv2.rectangle(image, (0, 0), (640, 80), (255, 0, 0), -1)
+        cv2.putText(image, f"REPS: curls: {curls}", (3, 30),
+                    cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+        cv2.putText(image, f"      press: {press}", (3, 60),
                     cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
         result.write(image)

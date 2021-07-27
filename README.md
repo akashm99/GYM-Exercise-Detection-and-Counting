@@ -2,7 +2,7 @@
 
 ## Demo:
 <video controls loop>
-  <source src="https://github.com/akashm99/GYM-Exercise-Detection-and-Counting/blob/main/Op/test2.mp4" type="video/mp4">
+  <source src="https://github.com/akashm99/GYM-Exercise-Detection-and-Counting/blob/main/Op/optest.mp4" type="video/mp4">
 </video>
 
 ### Video:   ![op](https://github.com/akashm99/GYM-Exercise-Detection-and-Counting/blob/main/Op/test2.mp4)
